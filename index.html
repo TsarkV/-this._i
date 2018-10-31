@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script>
+
+function Ticker(_i) {
+	this._i = _i;
+	this.tick = function(){
+		this._i = _i++;
+	}
+};
+
+var ticker = new Ticker(0);
+var timer = setInterval(function(){
+	ticker.tick();
+	alert(ticker._i);
+}, 1000);
+
+setTimeout(function(){
+	clearInterval(timer);
+	alert( 'стоп' );
+}, 5000);
+
+</script>
